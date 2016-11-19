@@ -1,16 +1,13 @@
 package RN_Blackjack;
 
-import java.util.ArrayList;
-
 public class Jogador {
 
 	private String nome;
-	private ArrayList<Carta> cartas;
-	
-	
-	public Jogador(String nome){
-		cartas = new ArrayList<>();
+	private int aposta = 100;
+
+	public Jogador(String nome, int aposta){
 		this.nome = nome;
+		this.aposta -= aposta;
 	}
 	
 	public String getNome() {
@@ -19,17 +16,13 @@ public class Jogador {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	public ArrayList<Carta> getCartas() {
-		return cartas;
+
+	public int getAposta() {
+		return aposta;
 	}
-	
-	public void setCartas(ArrayList<Carta> cartas) {
-		this.cartas = cartas;
-	}
-	
-	public String toString(){
-		return "Jogador: " + nome;
+
+	public void setAposta(int aposta) {
+		this.aposta = aposta;
 	}
 	
 }

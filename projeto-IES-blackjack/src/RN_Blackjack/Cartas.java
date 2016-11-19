@@ -13,22 +13,32 @@ public class Cartas {
 		BaralhoOuros = new ArrayList<>();
 		BaralhoCopas = new ArrayList<>();
 		BaralhoPaus = new ArrayList<>();
-		BaralhoPaus = new ArrayList<>();
-		IniciaBaralho();
-	}	
-	
-	public void IniciaBaralho(){
-		
-		for(int x = 0; x <= 12; x++){
-			BaralhoOuros.add(new Carta(x,"Ouro"));
-			BaralhoCopas.add(new Carta(x,"Copa"));
-			BaralhoPaus.add(new Carta(x,"Paus"));
-			BaralhoEspadas.add(new Carta(x,"Espeda"));
-		}
-		
+		BaralhoEspadas = new ArrayList<>();
 	}
 	
-	
-	
+	public void IniciaBaralho(){
+		for(int i = 0; i <= 12; i++){
+//			BaralhoOuros.add(new Carta(i, "♦"));
+//			BaralhoCopas.add(new Carta(i, "♥"));
+//			BaralhoPaus.add(new Carta(i, "♣"));
+//			BaralhoEspadas.add(new Carta(i, "♠"));
+		}
+	}
+
+	public ArrayList<Carta> getBaralhoOuros() {
+		return BaralhoOuros;
+	}
+
+	public ArrayList<Carta> getBaralhoCopas() {
+		return BaralhoCopas;
+	}
+
+	public ArrayList<Carta> getBaralhoPaus() {
+		return BaralhoPaus;
+	}
+
+	public ArrayList<Carta> getBaralhoEspadas() {
+		return BaralhoEspadas;
+	}
 	
 }
