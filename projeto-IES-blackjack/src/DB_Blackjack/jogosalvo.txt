@@ -1,0 +1,28 @@
+Bem vindo ao Jogo 21 (Blackjack)
+Entre com seu nome e faça sua aposta
+
+Olá Fulano você possui 100$ para apostas
+
+Seu dinheiro: 75$
+Valor da sua aposta: 25$
+
+
+--------------------
+RODADA 1
+
+SUAS CARTAS: 
+1♣
+3♠
+
+DEALER: 
+8♥
+
+--------------------
+
+Cartas do sistema: 
+8♥9♦1♥
+
+Soma das cartas jogador: 4
+Soma das cartas sistema: 18
+'PERDEU COM CARTA MENOR Q O SISTEMA'
+PERDEU DINHEIRO, O VALOR DO SEU DINHEIRO É: 75

@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class conexao_DB {
 
-	private BufferedWriter salvarJogo;
+	public BufferedWriter salvarJogo;
 
 	
 	public conexao_DB(String jogoSalvo) throws IOException{
@@ -14,13 +14,6 @@ public class conexao_DB {
 	}
 	
 	public void salvarJogo() throws IOException{
-	
-		System.out.println("Gravando jogo...");
-		salvarJogo.write("TESTE");
-		salvarJogo.newLine();
-		salvarJogo.write("PRINTANDO");
-		System.out.print(" OK");
-		
 		salvarJogo.flush();
 		salvarJogo.close();
 	}
