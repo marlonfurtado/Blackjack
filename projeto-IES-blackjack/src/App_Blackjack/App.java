@@ -18,14 +18,15 @@ public class App {
 		System.out.println("Bem vindo ao Jogo 21 (Blackjack)");
 		System.out.println("Entre com seu nome e faça sua aposta");
 
-		System.out.println("Seu nome: ");
+		System.out.print("Seu nome: ");
 		String nome = in.next();
 
-		System.out.println("Olá "+nome+" você possui 100$ para apostas");
+		System.out.println("\nOlá "+nome+" você possui 100$ para apostas\n");
 
 
-		System.out.println("\nFaça sua aposta: ");
+		System.out.print("Faça sua aposta: ");
 		int aposta = in.nextInt();
+		System.out.println("");
 
 		while(aposta <= 0 || aposta > 100){
 			System.out.println("Valor invalido.");
@@ -36,12 +37,12 @@ public class App {
 		// Passa para o jogador o nome e sua aposta
 		// AINDA TEM QUE FAZER O VALOR DA APOSTA DIMINUIR
 		// DO VALOR 'DEFAULT', QUE COMEÇA COM 100$ NA CLASSE 'Jogador'
-		
-		
+
+
 		JogadorController jogador = new JogadorController(nome, aposta);
 		Carta carta = new Carta();
 
-		
+
 		// MENU PROVISORIO, DEPOIS DA PARA CRIAR UM MÉTODO
 		// SO PARA O MENU
 		System.out.println("1 - Solicitar cartas");
@@ -49,7 +50,7 @@ public class App {
 		System.out.println("Digite sua opção: ");
 		int opcao = in.nextInt();
 
-		
+
 		// CONTADOR PARA DECIDIR QUAL RODADA ESTA O JOGADOR
 		int i = 1;
 
@@ -62,7 +63,7 @@ public class App {
 			// VETOR PARA GUARDAR AS CARTAS DO JOGADO E DEALER
 			// ESTAO NA CLASSE 'JogadorController'
 			// AINDA FALTA FAZER AS SOMAS E DECIDIR SE O JOGADOR GANHOU OU PERDEU
-			
+
 			ArrayList<String> cartasJogador = new ArrayList<>(); 		
 			ArrayList<String> cartasSistema = new ArrayList<>(); 		
 
@@ -74,7 +75,7 @@ public class App {
 			// APOS CHAMAR O METODO 'gerarCarta', A CARTA E ADICIONADA NO VETOR
 			// POR ISSO TEM Q CHAMAR E ADICIONAR NO VETOR
 			// DEPOIS CHAMA O 'setCartasJogador' PARA MANDAR ESSE VETOR PRA CLASSE 'JogadorController'
-			
+
 			cartasJogador.add(carta.gerarCarta().getNumero() + carta.gerarCarta().getNaipe());
 			cartasJogador.add(carta.gerarCarta().getNumero() + carta.gerarCarta().getNaipe());
 			jogador.setCartasJogador(cartasJogador);
@@ -82,7 +83,7 @@ public class App {
 
 			// DEPOIS E SO CHAMAR A CLASSE 'JogadorController' COM A POSIÇAO
 			// DA CARTA NO VETOR
-			
+
 			System.out.print(jogador.getCartasJogador().get(0));
 			System.out.println(jogador.getCartasJogador().get(1));
 
@@ -90,49 +91,47 @@ public class App {
 			System.out.println("\nDEALER: ");
 
 			// ADICIONANDO A CARTA PARA O DEALER
-			
+
 			cartasSistema.add(carta.gerarCarta().getNumero() + carta.gerarCarta().getNaipe());
-			
+
 			System.out.print(cartasSistema.get(0));
 			System.out.println("\n--------------------");
 
 
-			
+
 			// MENU PARA ENTRA NO 'SWITCH'
-			
+
 			System.out.println("1 - Mais uma carta");
 			System.out.println("2 - Encerrar rodada");
+			System.out.println("0 - Sair");
 			System.out.println("Digite sua opção: ");
 			opcao = in.nextInt();
 
-			do{
+
+
+			while(opcao != 0){
 				switch(opcao){
 				case 1:
 
 					System.out.println("\n--------------------");
-					System.out.println("RODADA "+i+"\n");
 
 					//  ADICIONA MAIS UMA CARTA PARA O JOGADOR
 
 					cartasJogador.add(carta.gerarCarta().getNumero() + carta.gerarCarta().getNaipe());
 					jogador.setCartasJogador(cartasJogador);
 
-
 					System.out.println("SUAS CARTAS: ");
-					
-					// PRINTA AS CARTAS ANTIGAS, E A CARTA NOVA
-					
-					System.out.print(jogador.getCartasJogador().get(0));
-					System.out.print(jogador.getCartasJogador().get(1));
-					System.out.println(jogador.getCartasJogador().get(2));
 
+					// PRINTA AS CARTAS ANTIGAS, E A CARTA NOVA
+					for (String c : cartasJogador) {
+						System.out.print(c);
+					}
 
 					System.out.println("\nDEALER: ");
 					System.out.print(cartasSistema.get(0));
 					System.out.println("\n--------------------");
 
-					// FALTA ARRUMAR, ELE NAO ENTRANDO AQUI DE NOVO
-					// MENU GAMBIARRA QUE NAO TA FUNCIONANDO
+					
 					System.out.println("1 - Mais uma carta");
 					System.out.println("2 - Encerrar rodada");
 					System.out.println("Digite sua opção: ");
@@ -144,15 +143,53 @@ public class App {
 
 					break;
 				case 2:
-
 					// ENCERRAR RODADA
 					// FAZER AS CONTAS
 					// DECIDIR QUEM GANHOU
+					int somarCartas = 0;
 
+					for (String c : cartasJogador) {
+						
+						c = Character.toString(c.charAt(0));
+						int auxC = Integer.parseInt(c);
+						
+						somarCartas += auxC;
+					}
+					
+					if (somarCartas == 21){
+						System.out.println("\nSoma das cartas: "+somarCartas);
+						System.out.println("Parabens! Você ganhou");
+						System.out.println("'FALTA ARRUMAR A MASCADA QUE ELE VAI RECEBER'");
+						opcao = 0;
+						break;
+					}
+					else if (somarCartas > 21){
+						System.out.println("\nSoma das cartas: "+somarCartas);
+						System.out.println("Você provavelmente perdeu, mas ainda falta"
+								+ "arrumar pra ver as cartas se o dealer ganhou ou nao");
+						opcao = 0;
+						break;
+					}
+					else if(somarCartas < 21){
+						System.out.println("\nSoma das cartas: "+somarCartas);
+						System.out.println("Ainda falta arrumar pra ver as cartas do Dealer "
+								+ "e ver quem ganhou");
+						System.out.println("E ver o dinheiro das apostas");
+
+						opcao = 0;
+						break;
+					}
+					
+				case 0:
+					System.out.println("SAIND DO JOGO NA GAMBIARRA.. TRATAR ISSO");
+					break;
+					
+				default:
+					System.out.println("VOCE ENTROU NO DEFAULT DO SWITCH!  'TRATAR ESSE ERRO'");
 					break;
 				}
+			}
 
-			}while(opcao != 0);
 		}
 	}
 }
