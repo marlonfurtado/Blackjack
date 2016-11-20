@@ -57,6 +57,7 @@ public class App {
 
 			}while(opcao != 0);  
 		
+			in.close();
 			ConexaoDB.salvarJogo();
 			
 		}catch(IOException e){

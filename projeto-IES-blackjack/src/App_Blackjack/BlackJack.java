@@ -157,6 +157,8 @@ public class BlackJack {
 			ConexaoDB.salvarJogo.write(jogador.getNome()+" você possui R$"+jogador.getDinheiro() +" para apostas.\n");
 			ConexaoDB.salvarJogo.newLine();
 			
+			entrada.close();
+			
 		}catch(IOException e){
 			e.getMessage();
 		}
