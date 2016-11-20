@@ -9,9 +9,15 @@ public class Jogador {
 	private double dinheiro = 5000;
         private ArrayList<Carta> cartasJogador;
 
-	public Jogador(String nome){
+        public Jogador(String nome){
 		this.nome = nome;
                 cartasJogador = new ArrayList<>();
+        }
+	
+		public Jogador(String nome, double dinheiro){
+		this.nome = nome;
+		this.dinheiro = dinheiro;
+        cartasJogador = new ArrayList<>();
         }
 	
 	public String getNome() {
