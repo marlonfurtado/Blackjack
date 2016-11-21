@@ -5,6 +5,7 @@ Jogador4;8900
 Jogador5;15250
 Jogador6;5690
 Jogador7;17999
+ProfYamaguti;9999999
 Jogador8;3500
 Jogador9;100
 Jogador10;7900

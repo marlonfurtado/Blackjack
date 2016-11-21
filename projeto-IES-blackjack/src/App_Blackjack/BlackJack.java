@@ -303,13 +303,17 @@ public class BlackJack {
 			  if(jogadores.size() < 5){
 				  tamanho = jogadores.size();
 			  }
-			  
+			
+			  System.out.println("\n♥♦♣♠ -------- Ranking TOP 5 Jogadores!  -------- ♥♦♣♠");
+			  System.out.println("");
 			  for(int x = 0; x < tamanho; x++){
 				  
 				  System.out.println(Integer.toString(x+1)+"º Lugar -> " + jogadores.get(x).toString());
 				  
 			  }
 				  
+			  System.out.println("\n♥♦♣♠ ------------------------------------------- ♥♦♣♠");
+			  System.out.println("");
 			  
 		  }
 		   
