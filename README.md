@@ -4,13 +4,19 @@
 <a href="https://github.com/marlonfurtado/Blackjack"><img src="http://betreviewcasino.com/img-files/header-i.png" /></a>
 <h1>Manual do usuário</h1>
 <h3>Como começar</h3>
-<br>Tenha certeza de possuir java instalado na máquina.<br/>
-Execute o arquivo "Blackjack.jar".
-<br>Ao abrir o menu, selecione a opção desejada.<br/>
-<br>"1- Iniciar novo jogo"<br/>
-<br>"2- Carregar jogo salvo"<br/>
-<br>"3 - Sair"<br/>
-
+***Executando pelo Eclipse***<br/>
+Importe o projeto para o Eclipse<br/>
+Aperte F11<br/>
+--------------------------------------------------------------------------------------------------------------<br/>
+***Executando pelo arquivo .jar no Windows***<br/>
+Abra o terminal, apertando Windows + R e digite cmd.<br/>
+Localize a pasta em que o arquivo se está armazenado.<br/>
+Execute o comando "java -jar Blackjack.jar" para iniciar o programa.<br/>
+--------------------------------------------------------------------------------------------------------------<br/>
+***Executando pelo arquivo .jar no Linux***<br/>
+Abra o terminal, apertando Ctrl + Alt + T.<br/>
+Localize a pasta em que o arquivo se está armazenado utilizando "find -name Blackjack.jar".<br/>
+Execute o comando "java -jar Blackjack.jar" para iniciar o programa.<br/>
 
 <h2>Objetivo</h2>
 Completar a soma de 21 pontos com as suas cartas, ou chegar o mais próximo possível sem ultrapassar esse valor.
@@ -22,10 +28,16 @@ As cartas Ás, Valete, Rainha e Rei possuem um valor de 10.<br/>
 Caso o jogador ganhe a rodada, ganhará o dobro do valor que apostou. Caso contrário, perderá a aposta.<br/>
 
 <h3>Como Jogar</h3>
-Ao iniciar a rodada, será distribuido duas cartas ao jogador e uma à Mesa(Sistema).<br/>
-O jogador pode soliciar mais cartas até o valor máximo da sua mão possuir um minimo de 17 ou máximo de 21.<br/>
-//falta coisa
 
+<br>Tenha certeza de possuir java instalado na máquina.<br/>
+Execute o arquivo "Blackjack.jar" ou abra o programa pelo Eclipse.<br/>
+Selecione "1- Novo jogo." ou "2- Carregar jogo".<br/>
+Digite 1 para iniciar a rodada.<br/>
+Digite o valor da aposta.<br/>
+Ao iniciar a rodada, será distribuido duas cartas ao jogador e uma à Mesa(Sistema).<br/>
+Digite 1 para receber outra carta ou 0 para finalizar a rodada.<br/>
+ jogador pode soliciar mais cartas até o valor máximo da sua mão possuir um minimo de 17 ou máximo de 21.<br/>
+Quando a rodada acabar, selecione uma nova opção.<br/>
 
 <h3>Pagamento</h3>
 O jogador deve inserir o valor que deseja apostar ao iniciar a rodada.<br/>
