@@ -21,6 +21,7 @@ import RN_Blackjack.Jogador;
 public class ConexaoDB{
 	
 	public static void Salvar(Jogador jogador) {
+		
 		String jogadorLinha = jogador.getNome()+";"+jogador.getDinheiro();
 		try {
 			FileWriter fw = new FileWriter("Jogador.txt", true);

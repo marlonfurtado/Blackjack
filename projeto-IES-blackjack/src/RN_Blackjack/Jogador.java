@@ -3,7 +3,7 @@ package RN_Blackjack;
 import java.util.ArrayList;
 
 
-public class Jogador {
+public class Jogador implements Comparable<Jogador> {
 
 		private String nome;
 		private double dinheiro = 5000;
@@ -71,6 +71,18 @@ public class Jogador {
         public String toString(){
         	return "-> "+this.nome+" - R$"+Double.toString(this.dinheiro);
         }
+
+        
+		@Override
+		public int compareTo(Jogador jogador) {
+			 if (this.dinheiro > jogador.getDinheiro()) {
+		          return -1;
+		     }
+		     if (this.dinheiro < jogador.getDinheiro()) {
+		          return 1;
+		     }
+		     return 0;
+		}
         
 }
 

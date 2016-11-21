@@ -40,18 +40,21 @@ public class Jogadores {
 		return null;
 	}
 	
-	public int ComparaJogador(Jogador jogador1, Jogador jogador2) {
-        if (jogador1.getDinheiro() < jogador2.getDinheiro()) return -1;
-        else if (jogador1.getDinheiro() > jogador2.getDinheiro()) return +1;
-        else return 0;
-    }
-	
 	public static ArrayList<Jogador> retornaListaDeJogadores(){
 		
 		return ConexaoDB.retornaJogadores();
 		
 	}
 	
+	public static ArrayList<Jogador> retornaListaDeJogadoresOrdenadaPorDinheiro(){
+		
+		ArrayList<Jogador> jogadores = retornaListaDeJogadores();
+		   
+		Collections.sort(jogadores);
+		
+		return jogadores;
+		
+	}
 	
 	public static void SalvaJogador(Jogador jogador){
 	

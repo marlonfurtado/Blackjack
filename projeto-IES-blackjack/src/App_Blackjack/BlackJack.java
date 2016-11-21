@@ -1,9 +1,10 @@
 package App_Blackjack;
 
+import java.awt.List;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
-import DB_Blackjack.ConexaoDB;
 import RN_Blackjack.Banca;
 import RN_Blackjack.Carta;
 import RN_Blackjack.Cartas;
@@ -262,8 +263,7 @@ public class BlackJack {
 	   
 	   public void ListaJogadoresSalvos(){
 		   
-		   ArrayList<Jogador> jogadores = ConexaoDB.retornaJogadores();
-		   
+		   ArrayList<Jogador> jogadores = Jogadores.retornaListaDeJogadores();
 		   
 		   if(!jogadores.isEmpty()){
 		   System.out.println("---- Jogadores Salvos: ----\n");
@@ -294,7 +294,27 @@ public class BlackJack {
 		   
 	   }
 	   
-	  
+	   public void imprimeTopCincoJogadores(){
+		   
+		  ArrayList<Jogador> jogadores = Jogadores.retornaListaDeJogadoresOrdenadaPorDinheiro();
+		  
+		  if(!jogadores.isEmpty()){
+			  int tamanho = 5;
+			  if(jogadores.size() < 5){
+				  tamanho = jogadores.size();
+			  }
+			  
+			  for(int x = 0; x < tamanho; x++){
+				  
+				  System.out.println(Integer.toString(x+1)+"º Lugar -> " + jogadores.get(x).toString());
+				  
+			  }
+				  
+			  
+		  }
+		   
+		   
+	   }
 	   
 	   
 	}

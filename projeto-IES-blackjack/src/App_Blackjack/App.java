@@ -29,6 +29,7 @@ public class App {
                 		 System.out.println("");
                 		 System.out.println("1 - Novo jogo.");
                 		 System.out.println("2 - Carregar jogo.");
+                		 System.out.println("3 - Ranking de jogadores.");
                 		 System.out.println("0 - Sair");
                          opcao1 = in.nextInt();
   
@@ -42,6 +43,12 @@ public class App {
 						case 2:
 							
 							blackjack.ListaJogadoresSalvos();
+							
+							break;
+							
+						case 3:
+							
+							blackjack.imprimeTopCincoJogadores();
 							
 							break;
 
