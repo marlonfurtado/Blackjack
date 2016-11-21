@@ -33,7 +33,7 @@ public class ConexaoDB{
 		}
 	}
 	
-	public static void Editar(Jogador jogador){
+	public static void Deletar(Jogador jogador){
 		try{
 			
 		File inputFile = new File("Jogador.txt");
@@ -53,8 +53,8 @@ public class ConexaoDB{
 		}
 		writer.close(); 
 		reader.close(); 
+		inputFile.delete();
 		tempFile.renameTo(inputFile);
-		inputFile.renameTo(tempFile);
 		//boolean successful = tempFile.renameTo(inputFile);
 		
 		

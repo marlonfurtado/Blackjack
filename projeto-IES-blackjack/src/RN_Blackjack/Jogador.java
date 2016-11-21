@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 public class Jogador {
 
-	private String nome;
-	private double dinheiro = 5000;
+		private String nome;
+		private double dinheiro = 5000;
         private ArrayList<Carta> cartasJogador;
 
         public Jogador(String nome){
@@ -20,17 +20,17 @@ public class Jogador {
         cartasJogador = new ArrayList<>();
         }
 	
-	public String getNome() {
+		public String getNome() {
 		return nome;
 	}
-	public void setNome(String nome) {
+		public void setNome(String nome) {
 		this.nome = nome;
 	}
 
         public double getDinheiro() {
 		return dinheiro;
 	}
-	public void adicionaDinheiro(double valor){
+        public void adicionaDinheiro(double valor){
             dinheiro += valor;
         }
         public void retiraDinheiro(double valor){
@@ -68,7 +68,9 @@ public class Jogador {
             cartasJogador.clear();
         }
         
-      
+        public String toString(){
+        	return "-> "+this.nome+" - R$"+Double.toString(this.dinheiro);
+        }
         
 }
 

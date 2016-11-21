@@ -45,12 +45,15 @@ public class Jogadores {
 	
 	
 	public static void SalvaJogador(Jogador jogador){
+	
+		DeletaJogador(jogador);
 		ConexaoDB.Salvar(jogador);
+	
 	}
 	
 	
-	public static void EditaJogador(Jogador jogador){
-		ConexaoDB.Editar(jogador);
+	static void DeletaJogador(Jogador jogador){
+		ConexaoDB.Deletar(jogador);
 	}
 	
 	

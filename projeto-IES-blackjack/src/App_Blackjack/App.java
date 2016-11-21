@@ -15,58 +15,45 @@ public class App {
    	public static void main(String[] args) {
 
             
-                BlackJack blackjack = new BlackJack();
+                	BlackJack blackjack = new BlackJack();
                 
-                Scanner in = new Scanner(System.in);
+                	Scanner in = new Scanner(System.in);
 
-		System.out.println("\nBem vindo ao Jogo 21 (Blackjack)");
-		System.out.println("Entre com seu nome e faça sua aposta!");
-
-		System.out.print("Digite seu nome: ");
-		String nome = in.next();
-//jogador
-                Jogador jogador = new Jogador(nome);
-                Banca banca = new Banca();
-                
-                System.out.println("\nOlá "+jogador.getNome()+" você possui R$"+jogador.getDinheiro() +" para apostas.\n");
-
-                    int opcao;
-                    do{
-                        
-                        System.out.println("1 - Iniciar rodada");
-                        System.out.println("2 - Salvar jogo");
-                        System.out.println("0 - Sair");
-                        System.out.println("Digite sua opçao: ");
-                        opcao = in.nextInt();
-                        
-                       
-                        
-                        switch (opcao) {
+                	System.out.println("\nBem vindo ao Jogo 21 (Blackjack)");
+		
+                	System.out.println("");
+                	
+                	int opcao1;
+                	do {
+                		
+                		 System.out.println("1 - Novo jogo.");
+                		 System.out.println("2 - Carregar jogo.");
+                		 System.out.println("0 - Sair");
+                         opcao1 = in.nextInt();
+  
+                		switch (opcao1) {
 						case 1:
-							
-							 	System.out.println("");
-	                            double aposta = 0;
-	                            System.out.println("\nDigite o valor da sua aposta: ");
-	                            aposta = in.nextDouble();
-	                            blackjack.criaRodada(aposta,jogador,banca); 
-							
+													
+							blackjack.NovoJogo();
+						
 							break;
-							
+
 						case 2:
-								
-								Jogadores.SalvaJogador(jogador);
-								System.out.println("\nJogo Salvo "+jogador.getNome()+"!");
-								System.out.println("");
+							
+							blackjack.ListaJogadoresSalvos();
 							
 							break;
-							
 
 						default:
 							break;
 						}
-                        
-                        
-                                               
-                    }while(opcao != 0);                
+						
+					} while (opcao1 != 0);
+                	
+                	
+                	
+                	
+		
+					               
         }
 }
