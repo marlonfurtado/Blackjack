@@ -25,7 +25,8 @@ public class App {
                 	
                 	int opcao1;
                 	do {
-                		
+                	     
+                		 System.out.println("");
                 		 System.out.println("1 - Novo jogo.");
                 		 System.out.println("2 - Carregar jogo.");
                 		 System.out.println("0 - Sair");

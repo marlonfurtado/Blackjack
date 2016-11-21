@@ -132,6 +132,7 @@ public class BlackJack {
        	
            int opcao;
            do{
+        	   System.out.println("");
                System.out.println("1 - Iniciar rodada.");
                System.out.println("2 - Salvar jogo.");
                System.out.println("0 - Voltar Menu Inicial.");
@@ -141,10 +142,35 @@ public class BlackJack {
                switch (opcao) {
 				case 1:
 					
-					 	System.out.println("");
-                       double aposta = 0;
-                       System.out.println("\nDigite o valor da sua aposta: ");
-                       aposta = in.nextDouble();
+					   System.out.println("");
+					   int aposta = 0;
+                       String valor;
+                       
+                       do {
+                    	   
+                    	   System.out.println("\nDigite o valor da sua aposta: ");
+                           valor = in.next();
+                           
+                           	try {
+                           		 aposta = Integer.parseInt(valor);
+                        	} catch (NumberFormatException e) {
+                        	      System.out.println("Somente numeros são aceitos!");
+                        	      aposta = 0;
+                        	}
+                           
+                           
+                           if(aposta > jogador.getDinheiro()){
+                        	   System.out.println("Você não tem dinheiro suficiente!");
+                        	   System.out.println(jogador.getNome()+" você possui R$"+jogador.getDinheiro() +" para apostas.\n");
+                           }else if(aposta < 0){
+                        	   System.out.println("Aposta inválida!");
+                           }
+                           
+                           
+                       } while (aposta < 0 || aposta > jogador.getDinheiro() || aposta == 0);
+                       
+                       
+                       
                        criaRodada(aposta,jogador,banca); 
 					
 					break;
@@ -174,6 +200,7 @@ public class BlackJack {
       
           int opcao;
           do{
+        	  System.out.println("");
               System.out.println("1 - Iniciar rodada.");
               System.out.println("2 - Salvar jogo.");
               System.out.println("0 - Voltar Menu Inicial.");
@@ -184,9 +211,35 @@ public class BlackJack {
 				case 1:
 					
 					 	System.out.println("");
-                      double aposta = 0;
-                      System.out.println("\nDigite o valor da sua aposta: ");
-                      aposta = in.nextDouble();
+					 	
+					 	int aposta = 0;
+	                       String valor;
+	                       
+	                       do {
+	                    	   
+	                    	   System.out.println("\nDigite o valor da sua aposta: ");
+	                           valor = in.next();
+	                           
+	                           	try {
+	                           		 aposta = Integer.parseInt(valor);
+	                        	} catch (NumberFormatException e) {
+	                        	      System.out.println("Somente numeros são aceitos!");
+	                        	      aposta = 0;
+	                        	}
+	                           
+	                           
+	                           if(aposta > jogador.getDinheiro()){
+	                        	   System.out.println("Você não tem dinheiro suficiente!");
+	                        	   System.out.println(jogador.getNome()+" você possui R$"+jogador.getDinheiro() +" para apostas.\n");
+	                           }else if(aposta < 0){
+	                        	   System.out.println("Aposta inválida!");
+	                           }
+	                           
+	                           
+	                       } while (aposta < 0 || aposta > jogador.getDinheiro() || aposta == 0);
+	                       
+                      
+                      
                       criaRodada(aposta,jogador,banca); 
 					
 					break;
@@ -240,6 +293,8 @@ public class BlackJack {
 		   
 		   
 	   }
+	   
+	  
 	   
 	   
 	}
